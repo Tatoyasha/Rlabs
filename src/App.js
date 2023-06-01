@@ -32,3 +32,11 @@ function App() {
 }
 
 export default App;
+
+
+      /* <Routes>
+          <Route exact patch="/home" component={<Home/>} />
+          <Route exact patch="/contacts" component={<Contacts/>} />
+          <Route exact patch="/about" component={<About/>} />
+          <Route exact patch="/blog" component={<Blog/>} />
+        </Routes> */
