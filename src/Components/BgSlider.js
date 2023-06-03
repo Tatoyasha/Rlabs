@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Carousel } from 'react-bootstrap'
-import hils1 from '../assets/pexels-jeff-guab-2407636.jpg'
-import hils2 from '../assets/pexels-joyston-judah-933054.jpg'
-import hils3 from '../assets/pexels-stephan-seeber-1261728.jpg'
-import hils4 from '../assets/pexels-trace-hudson-2724664.jpg'
+import dt1 from '../assets/DT1.jpg'
+import dt2 from '../assets/DT2.jpg'
+import dt3 from '../assets/DT3.jpg'
+import dt4 from '../assets/DT4.jpg'
 
 export default class BgSlider extends Component {
   render() {
@@ -12,48 +12,44 @@ export default class BgSlider extends Component {
         <Carousel.Item>
             <img
                 className="d-block w-100"
-                src={hils1}
+                src={dt1}
                 alt="hils"
             />
             <Carousel.Caption>
-                <h3>Slide label</h3>
-                <p>Caption for slide</p>
+                <h1>IT-TEAM</h1>
             </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
             <img
                 className="d-block w-100"
-                src={hils2}
+                src={dt2}
                 alt="hils"
             />
             <Carousel.Caption>
-                <h3>Slide label</h3>
-                <p>Caption for slide</p>
+                <h3>IT-TEAM</h3>
             </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
             <img
                 className="d-block w-100"
-                src={hils3}
+                src={dt3}
                 alt="hils"
             />
             <Carousel.Caption>
-                <h3>Slide label</h3>
-                <p>Caption for slide</p>
+                <h3>IT-TEAM</h3>
             </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
             <img
                 className="d-block w-100"
-                src={hils4}
+                src={dt4}
                 alt="hils"
             />
             <Carousel.Caption>
-                <h3>Slide label</h3>
-                <p>Caption for slide</p>
+                <h3>IT-TEAM</h3>
             </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

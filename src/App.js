@@ -14,16 +14,20 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Contacts from './Pages/Contacts';
 import Blog from './Pages/Blog';
+import AboutTeam from './Pages/AboutTeam';
+import BlogPost from './Pages/BlogPost';
 
 function App() {
   return (
     <div className='App'>
       <Header />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/AboutTeam/:tID" element={<AboutTeam/>}/>
+        <Route path="/BlogPost/:postId" element={<BlogPost/>} />
       </Routes>
       
 

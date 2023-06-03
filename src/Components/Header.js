@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, FormControl, Container, Form, Button, Modal } from 'react-bootstrap';
 import logo from './logo192.png';
 
+
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
@@ -116,7 +117,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About us</Nav.Link>
               <Nav.Link href="/contacts">Contacts</Nav.Link>
               <Nav.Link href="/blog">Blog</Nav.Link>
