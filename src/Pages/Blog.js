@@ -4,6 +4,8 @@ import WebLogo from '../assets/WebDev.svg'
 import AppLogo from '../assets/AppDev.svg'
 import ReactLogo from '../assets/ReactSvg.svg'
 import { Link } from 'react-router-dom';
+import StarRatings from 'react-star-ratings';
+import ReactPaginate from 'react-paginate';
 
 const posts = [
   {
@@ -13,6 +15,8 @@ const posts = [
     description: ' Дізнайтеся, як створити привабливий і ефективний сайт, здатний залучити й утримати клієнтів. У цьому пості ви отримаєте цінні поради та найкращі практики від досвідчених веб-розробників.',
     content: ' Цей пост буде присвячений тому, як розробити сайт, який не тільки має професійний вигляд, а й здатний привабити клієнтів і перетворити їх на постійних користувачів. Ви дізнаєтеся про важливі елементи дизайну та навігації, які допоможуть утримувати відвідувачів на сайті та підвищити конверсію. Досвідчені веб-розробники поділяться своїми найкращими порадами та розкажуть про ефективні стратегії, які можна застосувати при створенні сайту. У результаті ви зможете розробити сайт, який приверне увагу і залишить позитивне враження у вашої цільової аудиторії.',
     category: 'Веб-Розробка',
+    date: new Date(2022, 5, 15),
+    rating: 3.5
   },
   {
     id: 2,
@@ -21,6 +25,8 @@ const posts = [
     description: "Дізнайтеся, чому мобільна адаптивність є невід'ємною частиною успішного веб-сайту, і як забезпечити доступність вашого сайту на всіх пристроях.",
     content: "Сьогодні багато людей використовують мобільні пристрої для пошуку інформації та здійснення покупок в Інтернеті. Тому важливо, щоб ваш веб-сайт був доступний і читабельний на всіх пристроях, включно зі смартфонами та планшетами. У цьому пості ми розглянемо важливість мобільної адаптивності та пояснимо, як вона впливає на користувацький досвід. Ви дізнаєтеся про технології та підходи, які дають змогу створити мобільно-адаптивний сайт, і отримаєте поради щодо оптимізації контенту та дизайну для різних екранів. Після читання цього поста ви будете готові забезпечити доступність вашого сайту на всіх пристроях і задовольнити потреби сучасних користувачів.",
     category: 'Веб-Розробка',
+    date: new Date(2022, 8, 27),
+    rating: 3.5
   },
   {
     id: 3,
@@ -29,6 +35,8 @@ const posts = [
     description: ' У цьому пості ми розглянемо основні етапи розробки сайту і допоможемо вам розібратися в процесі, починаючи від ідеї і закінчуючи успішним запуском',
     content: 'Створення сайту - це складний і багатогранний процес, який включає кілька ключових етапів. У цьому пості ми познайомимо вас із кожним етапом розробки сайту і розповімо про завдання та особливості кожного з них. Ви дізнаєтеся, як визначити цілі та вимоги вашого сайту, як створити структуру і макет, як розробити функціональність і зовнішній вигляд, а також як провести тестування і випустити сайт у продакшн. Ми також обговоримо найкращі практики і поділимося порадами з управління проектом розробки сайту. Після прочитання цього поста ви матимете чітке уявлення про процес створення сайту і зможете ефективно керувати всіма його етапами.',
     category: 'Веб-Розробка',
+    date: new Date(2023, 1, 5),
+    rating: 3.5
   },
   {
     id: 4,
@@ -37,6 +45,8 @@ const posts = [
     description: " У цьому пості ми розглянемо ключові етапи розробки застосунків і допоможемо вам розібратися в процесі створення застосунків від ідеї до випуску на ринок",
     content: "Розробка додатків - це складний і багатоетапний процес. У цьому пості ми детально розглянемо ключові етапи розробки застосунків, які допоможуть вам успішно перетворити ідею на реальність. Ми почнемо з визначення цілей і вимог застосунку, потім перейдемо до створення прототипу і дизайну користувацького інтерфейсу. Ви дізнаєтеся про важливість розробки якісного коду, тестування та налагодження застосунку перед його випуском. Ми також розглянемо процес публікації та маркетингу програми для досягнення максимального успіху на ринку. Після прочитання цього посту ви будете готові до реалізації своєї ідеї та створення якісного застосунку.",
     category: 'розробка додатків',
+    date: new Date(2021, 11, 10),
+    rating: 3.5
   },
   {
     id: 5,
@@ -45,6 +55,8 @@ const posts = [
     description: "У цьому пості ми порівняємо платформи iOS і Android для розробки застосунків і допоможемо вам вибрати платформу, яка найбільше підходить для вашого проєкту.",
     content: "Під час розробки застосунків важливо вибрати відповідну платформу, яка забезпечить максимальне охоплення аудиторії та відповідає вашим цілям. У цьому пості ми порівняємо платформи iOS і Android і допоможемо вам прийняти рішення про вибір. Ми розглянемо особливості кожної платформи, такі як розмір ринку, платоспроможність користувачів, можливості розробки та інструменти. Ви дізнаєтеся про відмінності в дизайн-принципах і гайдлайнах, а також про різні моделі розповсюдження та монетизації додатків. Після прочитання цього посту ви зможете прийняти обґрунтоване рішення щодо вибору платформи для вашого застосунку.",
     category: 'розробка додатків',
+    date: new Date(2023, 2, 20),
+    rating: 3.5
   },
   {
     id: 6,
@@ -53,6 +65,8 @@ const posts = [
     description: " У цьому пості ми представимо вам список топових мов програмування, які широко використовуються для розробки мобільних додатків, і розповімо про їхні особливості та переваги.",
     content: "Вибір мови програмування - важливий аспект розробки мобільних додатків. У цьому пості ми представимо вам список топових мов програмування, які широко використовуються для розробки мобільних додатків. Ми розповімо про кожну мову, її особливості та переваги. Ви дізнаєтеся про мови, такі як Swift (для iOS), Kotlin і Java (для Android), JavaScript (для гібридних додатків) та інші популярні мови. Ми також обговоримо фреймворки та інструменти, пов'язані з кожною мовою. Після прочитання цього посту ви зможете вибрати найбільш підходящу мову програмування для вашого мобільного додатка.",
     category: 'розробка додатків',
+    date: new Date(2022, 7, 8),
+    rating: 3.5
   },
   {
     id: 7,
@@ -61,6 +75,8 @@ const posts = [
     description: "У цьому пості ми познайомимо вас із React JS - популярною бібліотекою JavaScript для розробки користувацьких інтерфейсів, і розповімо про її основи та переваги.",
     content: "eact JS - це потужна бібліотека JavaScript, яка дає змогу розробникам створювати ефективні та масштабовані користувацькі інтерфейси. У цьому пості ми представимо вам основи React JS, включно з компонентами, віртуальним DOM, JSX-синтаксисом і життєвим циклом компонентів. Ви дізнаєтеся про переваги React JS, такі як підвищена продуктивність, можливість перевикористання компонентів і легкість тестування. Ми також розповімо про екосистему React JS, включно з популярними інструментами та бібліотеками, які допоможуть вам розробляти додатки з використанням React JS. Після прочитання цього допису ви матимете базове розуміння React JS і готові розпочати розробку з використанням цієї бібліотеки.",
     category: 'React JS',
+    date: new Date(2022, 3, 17),
+    rating: 3.5
   },
   {
     id: 8,
@@ -69,6 +85,8 @@ const posts = [
     description: "У цьому пості ми розглянемо компонентний підхід у React JS і покажемо, як створювати повторно використовувані та модульні компоненти для розробки користувацьких інтерфейсів.",
     content: "Компонентний підхід є основним принципом розробки в React JS. У цьому пості ми розглянемо, що таке компоненти в React JS і як вони допомагають створювати повторно використовувані та модульні інтерфейси. Ви дізнаєтеся про різні типи компонентів, такі як функціональні та класові компоненти, і про те, як вони взаємодіють один з одним. Ми також покажемо вам, як передавати властивості (props) між компонентами і як використовувати стан (state) для управління динамічними даними. Ви дізнаєтеся про методи життєвого циклу компонентів і про те, як використовувати їх для виконання певних дій на різних етапах розробки. Після прочитання цього посту ви знатимете, як створювати гнучкі та перевикористовувані компоненти в React JS.",
     category: 'React JS',
+    date: new Date(2022, 6, 3),
+    rating: 3.5
   },
   {
     id: 9,
@@ -77,21 +95,49 @@ const posts = [
     description: "У цьому пості ми поговоримо про управління станом у React JS і познайомимо вас із бібліотекою Redux, яка допомагає ефективно керувати станом додатків.",
     content: "Керування станом - важливе завдання при розробці додатків на React JS. У цьому пості ми розглянемо різні підходи до управління станом у React JS і представимо вам бібліотеку Redux, яка є одним із найпопулярніших інструментів для управління станом. Ми пояснимо основні концепції Redux, як-от односпрямований потік даних і використання єдиного сховища для стану програми. Ви дізнаєтеся про дії (actions), редьюсерів (reducers) і сховище (store) у Redux, і про те, як вони взаємодіють із компонентами React JS. Ми також покажемо вам, як використовувати Redux DevTools для налагодження та моніторингу стану вашого застосунку. Після прочитання цього посту ви будете готові застосувати Redux для ефективного управління станом вашого додатка на React JS.",
     category: 'React JS',
+    date: new Date(2022, 9, 30),
+    rating: 3.5
   }
 ];
 
+const postsPerPage = 5; // Кількість постів на сторінку
+
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('Все');
-
+  const [sortOrder, setSortOrder] = useState('desc'); // По замовчуванню сортування за спаданням (від нових до старих)
+  const [currentPage, setCurrentPage] = useState(0); // Поточна сторінка
 
   const filteredPosts = selectedCategory === 'Все' ? posts : posts.filter(post => post.category === selectedCategory);
 
- 
-  const categories = ['Все', ...new Set(posts.map(post => post.category))];
+  // Сортування постів за датою
+  const sortedPosts = filteredPosts.sort((a, b) => {
+    if (sortOrder === 'asc') {
+      return a.date - b.date; // Від старих до нових
+    } else {
+      return b.date - a.date; // Від нових до старих
+    }
+  });
+
+  const pageCount = Math.ceil(sortedPosts.length / postsPerPage); // Загальна кількість сторінок
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    setCurrentPage(0); // Скидання поточної сторінки при зміні категорії
   };
+
+  const handleSortOrderChange = () => {
+    const newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+    setSortOrder(newSortOrder);
+  };
+
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  const offset = currentPage * postsPerPage; // Зсув для поточної сторінки
+  const currentPosts = sortedPosts.slice(offset, offset + postsPerPage); // Пости для поточної сторінки
+
+  const categories = ['Все', ...new Set(posts.map(post => post.category))];
 
   return (
     <div>
@@ -99,92 +145,78 @@ const Blog = () => {
       <div>
         Категорія:
         {categories.map((category) => (
-          <Button key={category} style={{margin:'3px', backgroundColor:'blue'}} onClick={() => handleCategoryChange(category)}>{category}</Button>
+          <Button key={category} style={{ margin: '3px', backgroundColor: 'blue' }} onClick={() => handleCategoryChange(category)}>{category}</Button>
         ))}
       </div>
-      {filteredPosts.map((post) => (
-        
-        <Col md={9} style={{backgroundColor: 'lightgray', marginBottom:'3px'}}>
-        <div className="d-flex align-items-center me-5" href='/BlogPost/1' key={post.id}>
+      <div>
+        Сортувати за:
+        <Button style={{ margin: '3px' }} onClick={handleSortOrderChange}>
+          {sortOrder === 'asc' ? 'Від нових до старих' : 'Від старих до нових'}
+        </Button>
+      </div>
+      {currentPosts.map((post) => (
+        <Col md={9} style={{ backgroundColor: 'lightgray', marginBottom: '3px' }}>
+          <div className="d-flex align-items-center me-5" href='/BlogPost/1' key={post.id}>
             <div className="flex-shrink-0">
-               <img 
+              <img
                 width={150}
                 height={150}
                 className="mr-3"
                 src={post.logo}
                 alt="Logo"
-                style={{backgroundColor:'whitesmoke'}}
-               />
+                style={{ backgroundColor: 'whitesmoke' }}
+              />
             </div>
-            <div >
+            <div style={{ flex: '1' }}>
+              <div>
                 <h5>{post.title}</h5>
-                <p >{post.description}</p>
+                <p>{post.description}</p>
+                <div style={{ bottom: '3px', right: '3px' }}>
+                  <StarRatings
+                    rating={post.rating}
+                    starRatedColor="blue"
+                    changeRating={newRating => {
+                      //Зміна рейтингу
+                    }}
+                    numberOfStars={5}
+                    starDimension="20px"
+                    starSpacing="2px"
+                  />
+                  <p style={{ margin: '0 3px 3px auto', fontSize: 'small' }}>{new Date(post.date).toLocaleDateString()}</p>
+                </div>
+              </div>
             </div>
-            <div style={{margin:'0 0 0 auto'}}>
-                <Link to={`/BlogPost/${post.id}`}>
-                <Button variant="primary" >
-                    Детальніше
+            <div style={{ margin: '0 0 0 auto' }}>
+              <Link to={`/BlogPost/${post.id}`}>
+                <Button variant="primary">
+                  Детальніше
                 </Button>
-                </Link></div>
+              </Link>
             </div>
+          </div>
         </Col>
       ))}
+      <div style={{ marginTop: '20px' }}>
+        <ReactPaginate
+          previousLabel={'← Попередня'}
+          nextLabel={'Наступна →'}
+          pageCount={pageCount}
+          onPageChange={handlePageChange}
+          containerClassName={'pagination'}
+          previousLinkClassName={'page-link'}
+          nextLinkClassName={'page-link'}
+          disabledClassName={'disabled'}
+          activeClassName={'active'}
+          pageClassName={'page-item'}
+          pageLinkClassName={'page-link'}
+          breakClassName={'page-item'}
+          breakLinkClassName={'page-link'}
+          marginPagesDisplayed={1}
+          pageRangeDisplayed={3}
+        />
+      </div>
     </div>
   );
 };
 
 export default Blog;
-
-
-
-
-
-
-
-// import React, { Component } from 'react'
-// import { Row, Col, Card, ListGroup } from 'react-bootstrap'
-// import JsLogo from "../assets/JavaScript-logo.png"
-// export default class Blog extends Component {
-//   render() {
-//     return (
-//       <Row>
-        // <Col md={9}>
-        //     <div className="d-flex align-items-center me-5" href='/BlogPost/1'>
-        //         <div className="flex-shrink-0">
-        //            <img 
-        //             width={150}
-        //             height={150}
-        //             className="mr-3"
-        //             src={JsLogo}
-        //             alt="Jslogo"
-        //            />
-        //         </div>
-        //         <div className="flex-grow-1 ms-3">
-        //             <h5>Blog post</h5>
-        //             <p>
-        //                 Якийсь текст.Якийсь текст.Якийсь текст.
-        //                 Якийсь текст.Якийсь текст.Якийсь текст.Якийсь текст.
-        //                 Якийсь текст.Якийсь текст.Якийсь текст.Якийсь текст.
-        //                 Якийсь текст.Якийсь текст.Якийсь текст.
-        //             </p>
-        //         </div>
-        //     </div>
-        // </Col>
-//         <Col md="3">
-//             <h5 className="text-center mt-5">Категгорії</h5>
-
-//             <Card>
-//                 <ListGroup variant="flush">
-//                     <ListGroup.Item>категорія 1</ListGroup.Item>
-//                     <ListGroup.Item>категорія 2</ListGroup.Item>
-//                     <ListGroup.Item>категорія 3</ListGroup.Item>
-//                     <ListGroup.Item>категорія 4</ListGroup.Item>
-//                     <ListGroup.Item>категорія 5</ListGroup.Item>
-//                 </ListGroup>
-//             </Card>
-        
-//         </Col>
-//       </Row>
-//     )
-//   }
-// }
