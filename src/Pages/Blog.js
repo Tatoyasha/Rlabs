@@ -145,7 +145,17 @@ const Blog = () => {
       <div>
         Категорія:
         {categories.map((category) => (
-          <Button key={category} style={{ margin: '3px', backgroundColor: 'blue' }} onClick={() => handleCategoryChange(category)}>{category}</Button>
+          <Button
+            key={category}
+            style={{
+              margin: '3px',
+              backgroundColor: category === selectedCategory ? 'blue' : 'transparent',
+              color: category === selectedCategory ? 'white' : 'black'
+            }}
+            onClick={() => handleCategoryChange(category)}
+          >
+            {category}
+          </Button>
         ))}
       </div>
       <div>

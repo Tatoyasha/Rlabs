@@ -1,0 +1,38 @@
+{
+
+  "home": "Головна",
+  "about": "Про нас",
+  "contacts": "Контакти",
+  "blog": "Блог",
+
+
+  "login": "Увійти",
+  "register":"Зареєструватися",
+  "emailAddress": "Адреса електронної пошти",
+  "emailPS": "Ми ніколи не передамо вашу електронну пошту нікому іншому",
+  "enterEmail": "Введіть електронну пошту",
+  "password": "Пароль",
+  "enterPassword": "Введіть пароль",
+  "rememberMe": "Запам'ятати мене",
+  "submit": "Надіслати",
+  "createAccount": "Створити обліковий запис",
+  "confirmPassword": "Підтвердження паролю",
+  "enterConfirmPassword": "Введіть підтвердження паролю",
+  "emailError": "Некоректний email",
+  "emailEmptyError": "Email не може бути порожнім",
+  "passwordError": "Пароль повинен мати не менше 3 і не більше 8 символів",
+  "passwordEmptyErr": "Пароль не може бути пустим",
+  "confirmPasswordError": "Підтвердження паролю не співпадає з паролем",
+  "confirmPasswordEmptyError":"Підтвердження паролю не може бути порожнім",
+
+  "search": "Пошук",
+
+  "teamTitle": "Наша команда",
+  "webDevTeam": "Команда веб-розробки",
+  "webDevTeamDescription": "Створюємо інтернет-рішення, що змінюють світ!",
+  "appDevTeam": "Команда розробки додатків",
+  "appDevTeamDescription": "Перетворюємо ваші ідеї в мобільні додатки майбутнього!",
+  "webDesignTeam": "Команда веб-дизайну",
+  "webDesignTeamDescription": "Ваш бренд, ваш стиль, наш творчий дотик!",
+  "aboutTeam": "Про Команду"
+}

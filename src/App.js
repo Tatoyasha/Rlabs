@@ -17,8 +17,12 @@ import Blog from './Pages/Blog';
 import AboutTeam from './Pages/AboutTeam';
 import BlogPost from './Pages/BlogPost';
 
+import { I18nextProvider } from 'react-i18next';
+import i18n from './Components/i18n_locals';
+
 function App() {
   return (
+    <I18nextProvider i18n={i18n}>
     <div className='App'>
       <Header />
       <Routes>
@@ -29,9 +33,8 @@ function App() {
         <Route path="/AboutTeam/:tID" element={<AboutTeam/>}/>
         <Route path="/BlogPost/:postId" element={<BlogPost/>} />
       </Routes>
-      
-
     </div>
+    </I18nextProvider>
   );
 }
 

@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, FormControl, Container, Form, Button, Modal } from 'react-bootstrap';
 import logo from './logo192.png';
+import { useTranslation } from 'react-i18next';
 
+import i18n from './i18n_locals';
 
 const Header = () => {
+
+  const languageHandler = (e) =>{
+    i18n.changeLanguage(e.target.value);
+  } 
+  const { t } = useTranslation();
+  
   const [showModal, setShowModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
 
@@ -29,9 +37,9 @@ const Header = () => {
   const [emailDirty, setEmailDirty] = useState(false);
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [confirmPasswordDirty, setConfirmPasswordDirty] = useState(false);
-  const [emailError, setEmailError] = useState('Email не може бути порожнім');
-  const [passwordError, setPasswordError] = useState('Пароль не може бути порожнім');
-  const [confirmPasswordError, setConfirmPasswordError] = useState('Підтвердження паролю не може бути порожнім');
+  const [emailError, setEmailError] = useState(t('emailEmptyError'));
+  const [passwordError, setPasswordError] = useState(t('passwordEmptyErr'));
+  const [confirmPasswordError, setConfirmPasswordError] = useState(t('confirmPasswordEmptyError'));
   const [formValid_login, setFormValid_login] = useState(false);
   const [formValid_reg, setFormValid_reg] = useState(false)
 
@@ -46,7 +54,7 @@ const Header = () => {
     setEmail(e.target.value);
     const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!re.test(String(e.target.value.toLowerCase()))) {
-      setEmailError('Некоректний email');
+      setEmailError(t('emailError'));
     } else {
       setEmailError('');
     }
@@ -55,9 +63,9 @@ const Header = () => {
   const passwordHandler = (e) => {
     setPassword(e.target.value);
     if (e.target.value.length < 3 || e.target.value.length > 8) {
-      setPasswordError('Пароль повинен мати не менше 3 і не більше 8 символів');
+      setPasswordError(t('passwordError'));
       if (!e.target.value) {
-        setPasswordError('Пароль не може бути порожнім');
+        setPasswordError(t('passwordEmptyErr'));
       }
     } else {
       setPasswordError('');
@@ -67,7 +75,7 @@ const Header = () => {
   const confirmPasswordHandler = (e) => {
     setConfirmPassword(e.target.value);
     if (e.target.value !== password) {
-      setConfirmPasswordError('Підтвердження паролю не співпадає з паролем');
+      setConfirmPasswordError(t('confirmPasswordError"'));
     } else {
       setConfirmPasswordError('');
     }
@@ -85,7 +93,7 @@ const Header = () => {
         setConfirmPasswordDirty(true);
         break;
       default:
-        // Обработка для других случаев
+        // Обробка на інші випадки
         break;
     }
   }
@@ -117,18 +125,21 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/about">About us</Nav.Link>
-              <Nav.Link href="/contacts">Contacts</Nav.Link>
-              <Nav.Link href="/blog">Blog</Nav.Link>
+              <Nav.Link href="/">{t('home')}</Nav.Link>
+              <Nav.Link href="/about">{t('about')}</Nav.Link>
+              <Nav.Link href="/contacts">{t('contacts')}</Nav.Link>
+              <Nav.Link href="/blog">{t('blog')}</Nav.Link>
             </Nav>
             <Form className="d-flex">
-              <FormControl type="text" placeholder="Search" className="me-sm-3" />
-              <Button variant="outline-info">Search</Button>
+              <FormControl type="text" placeholder={t('search')} className="me-sm-3" />
+              <Button variant="outline-info">{t('search')}</Button>
               <Button variant="primary" onClick={handleShowModal}>
-                Login
+                {t('login')}
               </Button>
-
+              <select name="language" className='mx-2 fs-3 bg-transparent border-0 ' onChange={languageHandler}>
+                <option value='eng'>ENG</option>
+                <option value='ua' selected>UA</option>
+              </select>
             </Form>
           </Navbar.Collapse>
         </Container>
@@ -136,35 +147,35 @@ const Header = () => {
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
+          <Modal.Title>{t('login')}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>{t('emailAddress')}</Form.Label>
               {(emailDirty && emailError) && <div style={{ color: "red" }}>{emailError}</div>}
-              <Form.Control onChange={e => emailHandler(e)} name="email" value={email} onBlur={e => blurHandler(e)} type="email" placeholder="Enter email" />
+              <Form.Control onChange={e => emailHandler(e)} name="email" value={email} onBlur={e => blurHandler(e)} type="email" placeholder={t('enterEmail')} />
               <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
+                {t('emailPS')}
               </Form.Text>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>{t('password')}</Form.Label>
               {(passwordError && passwordDirty) && <div style={{ color: "red" }}>{passwordError}</div>}
-              <Form.Control onChange={e => passwordHandler(e)} name="password" value={password} onBlur={e => blurHandler(e)} type="password" placeholder="Enter password">
+              <Form.Control onChange={e => passwordHandler(e)} name="password" value={password} onBlur={e => blurHandler(e)} type="password" placeholder={t('enterPassword')}>
               </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Remember me" />
+              <Form.Check type="checkbox" label={t('rememberMe')} />
             </Form.Group>
 
             <Button disabled={!formValid_login} variant="primary" type="submit">
-              Submit
+              {t('submit')}
             </Button>
             <Button variant="primary" onClick={combinatedAction}>
-                Create Account
+                {t('createAccount')}
               </Button>
           </Form>
         </Modal.Body>
@@ -172,35 +183,35 @@ const Header = () => {
 
       <Modal show={showRegisterModal} onHide={handleCloseRegisterModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Create Account</Modal.Title>
+          <Modal.Title>{t('createAccount')}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>{t('emailAddress')}</Form.Label>
               {(emailDirty && emailError) && <div style={{ color: "red" }}>{emailError}</div>}
-              <Form.Control onChange={e => emailHandler(e)} name="email" value={email} onBlur={e => blurHandler(e)} type="email" placeholder="Enter email" />
+              <Form.Control onChange={e => emailHandler(e)} name="email" value={email} onBlur={e => blurHandler(e)} type="email" placeholder={t('enterEmail')} />
               <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
+                {t('emailPS')}
               </Form.Text>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>{t('password')}</Form.Label>
               {(passwordError && passwordDirty) && <div style={{ color: "red" }}>{passwordError}</div>}
-              <Form.Control onChange={e => passwordHandler(e)} name="password" value={password} onBlur={e => blurHandler(e)} type="password" placeholder="Enter password">
+              <Form.Control onChange={e => passwordHandler(e)} name="password" value={password} onBlur={e => blurHandler(e)} type="password" placeholder={t('enterPassword')}>
               </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="formBasicConfirmPassword">
-              <Form.Label>Confirm Password</Form.Label>
+              <Form.Label>{t('confirmPassword')}</Form.Label>
               {(confirmPasswordError && confirmPasswordDirty) && <div style={{ color: "red" }}>{confirmPasswordError}</div>}
-              <Form.Control onChange={e => confirmPasswordHandler(e)} name="confirmPassword" value={confirmPassword} onBlur={e => blurHandler(e)} type="password" placeholder="Confirm password">
+              <Form.Control onChange={e => confirmPasswordHandler(e)} name="confirmPassword" value={confirmPassword} onBlur={e => blurHandler(e)} type="password" placeholder={t('enterConfirmPassword')}>
               </Form.Control>
             </Form.Group>
 
             <Button disabled={!formValid_reg} variant="primary" type="submit">
-              Register
+              {t('register')}
             </Button>
 
           </Form>

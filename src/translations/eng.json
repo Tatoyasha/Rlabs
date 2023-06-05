@@ -1,0 +1,38 @@
+{
+  
+  "home": "Home",
+  "about": "About",
+  "contacts": "Contacts",
+  "blog": "Blog",
+  
+
+  "login": "Login",
+  "register":"register",
+  "emailAddress": "Email Address",
+  "enterEmail": "Enter email",
+  "emailPS": "We'll never share your email with anyone else.",
+  "password": "Password",
+  "enterPassword": "Enter password",
+  "rememberMe": "Remember me",
+  "submit": "Submit",
+  "createAccount": "Create Account",
+  "confirmPassword": "Confirm Password",
+  "enterConfirmPassword": "Enter confirm password",
+  "emailError": "Invalid email",
+  "emailEmptyErr": "Email cannot be empty",
+  "passwordError": "Password must be between 3 and 8 characters",
+  "passwordEmptyErr": "Password cannot be empty",
+  "confirmPasswordError": "Confirm password does not match",
+  "confirmPasswordEmptyError":"The password confirmation cannot be empty",
+
+  "search": "Search",
+
+  "teamTitle": "Our team",
+  "webDevTeam": "Web Development Team",
+  "webDevTeamDescription": "Creating world-changing web solutions!",
+  "appDevTeam": "App Development Team",
+  "appDevTeamDescription": "Turning your ideas into future mobile apps!",
+  "webDesignTeam": "Web Design Team",
+  "webDesignTeamDescription": "Your brand, your style, our creative touch!",
+  "aboutTeam": "About Team"
+}

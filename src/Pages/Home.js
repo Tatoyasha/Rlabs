@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 import { Container, Row, Card, Button } from 'react-bootstrap'
 import BgSlider from '../Components/BgSlider'
 
@@ -6,13 +6,14 @@ import devTeam1 from "../assets/devTeam.jpg"
 import devTeam2 from "../assets/devTeam1.jpg"
 import devTeam3 from "../assets/devTeam2.jpg"
 import { Link } from 'react-router-dom'
-export default class Home extends Component {
-  render() {
+import { useTranslation } from 'react-i18next'
+const Home = () => {
+    const { t } = useTranslation();
     return (
     <>
     <BgSlider/>
     <Container style={{marginleft: 'auto', marginRight: 'auto', width: '60em', display:'block'}}>
-        <h2 classNmae="text-center m-4">Our team</h2>
+        <h2 classNmae="text-center m-4">{t('teamTitle')}</h2>
         <Row md={2}>
             <Card>
                 <Card.Img 
@@ -20,11 +21,11 @@ export default class Home extends Component {
                 src={devTeam1}
                 />
                 <Card.Body>
-                    <Card.Title>Команда Веб-розробки</Card.Title>
-                    <Card.Text> "Створюємо інтернет-рішення, що змінюють світ!"</Card.Text>
+                    <Card.Title>{t('webDevTeam')}</Card.Title>
+                    <Card.Text>{t('webDevTeamDescription')}</Card.Text>
                     <Link to='/AboutTeam/1'>
                     <Button variant="primary">
-                        About Team
+                        {t('aboutTeam')}
                     </Button>
                     </Link>
                 </Card.Body>
@@ -36,11 +37,11 @@ export default class Home extends Component {
                 src={devTeam2}
                 />
                 <Card.Body>
-                    <Card.Title>Команда розробки додатків</Card.Title>
-                    <Card.Text>"Перетворюємо ваші ідеї в мобільні додатки майбутнього!"</Card.Text>
+                    <Card.Title>{t('appDevTeam')}</Card.Title>
+                    <Card.Text>{t('appDevTeamDescription')}</Card.Text>
                     <Link to='/AboutTeam/2'>
                     <Button variant="primary">
-                        About Team
+                        {t('aboutTeam')}
                     </Button>
                     </Link>
                 </Card.Body>
@@ -51,11 +52,11 @@ export default class Home extends Component {
                 src={devTeam3}
                 />
                 <Card.Body>
-                    <Card.Title>Команда Веб-Дизайну</Card.Title>
-                    <Card.Text>"Ваш бренд, ваш стиль, наш творчий дотик!"</Card.Text>
+                    <Card.Title>{t('webDesignTeam')}</Card.Title>
+                    <Card.Text>{t('webDesignTeamDescription')}</Card.Text>
                     <Link to='/AboutTeam/3'>
                     <Button variant="primary">
-                        About Team
+                        {t('aboutTeam')}
                     </Button>
                     </Link>
                 </Card.Body>
@@ -65,5 +66,7 @@ export default class Home extends Component {
     </Container>
     </>
     )
-  }
+  
 }
+
+export default Home;
