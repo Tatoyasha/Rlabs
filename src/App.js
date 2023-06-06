@@ -16,7 +16,7 @@ import Contacts from './Pages/Contacts';
 import Blog from './Pages/Blog';
 import AboutTeam from './Pages/AboutTeam';
 import BlogPost from './Pages/BlogPost';
-
+import NotFound from './Pages/NotFound'
 import { I18nextProvider } from 'react-i18next';
 import i18n from './Components/i18n_locals';
 
@@ -33,6 +33,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/AboutTeam/:tID" element={<AboutTeam/>}/>
         <Route path="/BlogPost/:postId" element={<BlogPost/>} />
+        <Route path='*' element={<NotFound />}/>
       </Routes>
     </div>
     </I18nextProvider>
